@@ -38,7 +38,7 @@ Empty messages are invalid input.
 Non-alphabetic characters remain unchanged during encryption/decryption.
 
 
-## Usage
+**Usage:**
 Any Go compiler works.
 1. ROT13 (Rotate by 13)
 How it works: Each letter is replaced by the letter 13 positions forward in the alphabet. Since there are 26 letters, applying ROT13 twice returns the original text (it's its own inverse).
@@ -50,28 +50,28 @@ Encrypted: Uryyb
 2. Reverse Alphabet
 How it works: Each letter is replaced by its mirror position in the alphabet. A becomes Z, b becomes y, etc. Like ROT13, it's also its own inverse.
 
-Example:
+**Example:**
 
 Plaintext: Hello
 Encrypted: Svool
 3. Caesar Cipher (Shift by 3)
 How it works: Each letter is shifted 3 positions forward in the alphabet. This is the cipher famously used by Julius Caesar. To decrypt, shift 3 positions backward.
 
-Example:
+**Example:**
 
 Plaintext: Hello
 Encrypted: Khoor
 
 Implementation Details
 
-#Allowed Packages
+**Allowed Packages:**
 bufio - For reading user input.
 fmt - For formatted I/O.
 os - For operating system functionality.
 strconv - For converting strings.
 strings - For string manipulation.
 
-#Key Features
+**Key Features:**
 Case preservation (uppercase stays uppercase, lowercase stays lowercase).
 Non-alphabetic characters pass through unchanged.
 Empty message got retry pop-up.

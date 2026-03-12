@@ -1,73 +1,87 @@
-Cypher Tool
-A command-line tool for encrypting and decrypting messages using classical cypher techniques.
+# QuickNotes 📝
 
-What It Does
-This tool allows you to:
+A simple tool for accessing, storing and creating single lined notes!
 
-Encrypt plaintext messages using various classical ciphers.
-Decrypt encrypted messages back to plaintext (original message).
-Preserve non-alphabetic characters (numbers, punctuation, spaces) in their original form.
-Choose from three different encryption algorithms.
-Usage
-Running the Tool
-go run main.go
-Example Session
-=================================
-Welcome to the Cypher Tool!
-=================================
+## Overview
+
+QuickNotes is a CLI-based that allows users to manage short single-line notes. With QuickNotes, users can create collections of notes, open and view them, add new notes, or remove existing notes.
+
+Storing notes happens locally. For each collection a plain text file is created. Inside of the text file every new line is a new note.
+
+## Getting Started
+
+### Installing
+
+* Simply head to [releases](https://gitea.kood.tech/jerejuhanimeskanen/notes/releases) and download the latest build!
+
+### Building 
+<!> [Go](https://go.dev/doc/install) is required for building, instructions to install can be found on their website.
+
+* If you want to make changes to your specific build, clone the repository, make changes and build it yourself.
+```
+git clone https://gitea.kood.tech/jerejuhanimeskanen/notes.git
+cd notes
+go build
+```
+
+## Usage
+
+### Running the file
+
+```
+./quicknotes ExampleCollection
+```
+
+### Selecting operation
+
+Selecting an option wheteer to show, add or delete some notes!
+```
+Welcome to QuickNotes!
+You are currently managing: ExampleCollection
 
 Select operation:
-1. Encrypt
-2. Decrypt
-Enter your choice (1 or 2): 1
+1. Show notes.
+2. Add a note.
+3. Delete a note.
+4. Exit.
+```
 
-Select encryption type:
-1. ROT13 - Rotate alphabet by 13 positions
-2. Reverse - Reverse alphabet cipher (A<->Z, b<->y, etc.)
-3. Caesar - Caesar cipher with shift of 3
-Enter your choice (1, 2, or 3): 1
+### Showing notes
 
-Enter your message: Hello, World! 123
+When selected, tool will show all notes in current collection.
+```
+Notes in ExampleCollection:
+001 - note one
+002 - note two
+```
 
---- Result ---
-Uryyb, Jbeyq! 123
-Input Validation
-The tool automatically trims leading nad trailing whitespace from inputs.
-Invalid selections will prompt you to enter again.
-Empty messages are invalid input.
-Non-alphabetic characters remain unchanged during encryption/decryption.
-Supported Ciphers
-1. ROT13 (Rotate by 13)
-How it works: Each letter is replaced by the letter 13 positions forward in the alphabet. Since there are 26 letters, applying ROT13 twice returns the original text (it's its own inverse).
 
-Example:
+### Adding a note
 
-Plaintext: Hello
-Encrypted: Uryyb
-2. Reverse Alphabet
-How it works: Each letter is replaced by its mirror position in the alphabet. A becomes Z, b becomes y, etc. Like ROT13, it's also its own inverse.
+When selected, tool will prompt for an input, then add the note to current collection!
+```
+Enter the note you'd like to add:
+note three
+```
 
-Example:
 
-Plaintext: Hello
-Encrypted: Svool
-3. Caesar Cipher (Shift by 3)
-How it works: Each letter is shifted 3 positions forward in the alphabet. This is the cipher famously used by Julius Caesar. To decrypt, shift 3 positions backward.
+### Deleting a note
 
-Example:
+When selected, tool will prompt user to give the index of a note to remove. Or optionally use 0 to cancel out.
+```
+Notes in ExampleCollection:
+001 - note one
+002 - note two
+003 - note three
 
-Plaintext: Hello
-Encrypted: Khoor
-Implementation Details
-Allowed Packages
-bufio - For reading user input.
-fmt - For formatted I/O.
-os - For operating system functionality.
-strconv - For converting strings.
-strings - For string manipulation.
-Key Features
-Case preservation (uppercase stays uppercase, lowercase stays lowercase).
-Non-alphabetic characters pass through unchanged.
-Empty message got retry pop-up.
-Robust input validation with retry logic.
-Clean, modular code structure.
+Which note you'd like to remove? 0 to exit:
+3
+```
+
+## Known bugs 🐛
+* Ability to create empty notes with the use of terminal keys e.g. ^[[D
+
+## Authors
+* **Jere Meskanen** - *Managing collections & notes* - [jerejuhanimeskanen](https://gitea.kood.tech/jerejuhanimeskanen)
+* **Ahmed El Maazi** - *Navigation, handling user inputs* - [ahmedelmaazi](https://gitea.kood.tech/ahmedelmaazi)
+* **Chanrow Petch** - *Handling & validating arguments* - [chanrowpetch](https://gitea.kood.tech/chanrowpetch)

@@ -31,7 +31,7 @@ Enter your message: Hello, World! 123
 --- Result ---
 Uryyb, Jbeyq! 123
 
-Input Validation
+## Input Validation
 The tool automatically trims leading nad trailing whitespace from inputs.
 Invalid selections will prompt you to enter again.
 Empty messages are invalid input.
@@ -43,7 +43,7 @@ Any Go compiler works.
 1. ROT13 (Rotate by 13)
 How it works: Each letter is replaced by the letter 13 positions forward in the alphabet. Since there are 26 letters, applying ROT13 twice returns the original text (it's its own inverse).
 
-Example:
+**Example:**
 
 Plaintext: Hello
 Encrypted: Uryyb
@@ -79,3 +79,6 @@ Robust input validation with retry logic.
 Clean, modular code structure.
 
 ## Authors
+hoangphuocvu
+Chanrow Petch
+-

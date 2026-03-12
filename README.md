@@ -1,16 +1,26 @@
-# CypherTool
+# Cypher Tool
 
 A command-line tool for encrypting and decrypting messages using classical cypher techniques.
 
-## Overview
+## What It Does
 
-Encrypt plaintext messages using various classical ciphers.
-Decrypt encrypted messages back to plaintext (original message).
-Preserve non-alphabetic characters (numbers, punctuation, spaces) in their original form.
-Choose from three different encryption algorithms.
+This tool allows you to:
+- Encrypt plaintext messages using various classical ciphers.
+- Decrypt encrypted messages back to plaintext (original message).
+- Preserve non-alphabetic characters (numbers, punctuation, spaces) in their original form.
+- Choose from three different encryption algorithms.
 
-## Getting Started
-Example Session
+## Usage
+
+### Running the Tool
+
+```bash
+go run main.go
+```
+
+### Example Session
+
+```
 =================================
 Welcome to the Cypher Tool!
 =================================
@@ -30,55 +40,58 @@ Enter your message: Hello, World! 123
 
 --- Result ---
 Uryyb, Jbeyq! 123
+```
 
-## Input Validation
-The tool automatically trims leading nad trailing whitespace from inputs.
-Invalid selections will prompt you to enter again.
-Empty messages are invalid input.
-Non-alphabetic characters remain unchanged during encryption/decryption.
+### Input Validation
 
+- The tool automatically trims leading nad trailing whitespace from inputs.
+- Invalid selections will prompt you to enter again.
+- Empty messages are invalid input.
+- Non-alphabetic characters remain unchanged during encryption/decryption.
 
-**Usage:**
-Any Go compiler works.
-1. ROT13 (Rotate by 13)
-How it works: Each letter is replaced by the letter 13 positions forward in the alphabet. Since there are 26 letters, applying ROT13 twice returns the original text (it's its own inverse).
+## Supported Ciphers
 
-**Example:**
+### 1. ROT13 (Rotate by 13)
 
-Plaintext: Hello
-Encrypted: Uryyb
-2. Reverse Alphabet
-How it works: Each letter is replaced by its mirror position in the alphabet. A becomes Z, b becomes y, etc. Like ROT13, it's also its own inverse.
+**How it works:** Each letter is replaced by the letter 13 positions forward in the alphabet. Since there are 26 letters, applying ROT13 twice returns the original text (it's its own inverse).
 
 **Example:**
+- Plaintext: `Hello`
+- Encrypted: `Uryyb`
 
-Plaintext: Hello
-Encrypted: Svool
-3. Caesar Cipher (Shift by 3)
-How it works: Each letter is shifted 3 positions forward in the alphabet. This is the cipher famously used by Julius Caesar. To decrypt, shift 3 positions backward.
+### 2. Reverse Alphabet
+
+**How it works:** Each letter is replaced by its mirror position in the alphabet. A becomes Z, b becomes y, etc. Like ROT13, it's also its own inverse.
 
 **Example:**
+- Plaintext: `Hello`
+- Encrypted: `Svool`
 
-Plaintext: Hello
-Encrypted: Khoor
+### 3. Caesar Cipher (Shift by 3)
 
-Implementation Details
+**How it works:** Each letter is shifted 3 positions forward in the alphabet. This is the cipher famously used by Julius Caesar. To decrypt, shift 3 positions backward.
 
-**Allowed Packages:**
-bufio - For reading user input.
-fmt - For formatted I/O.
-os - For operating system functionality.
-strconv - For converting strings.
-strings - For string manipulation.
+**Example:**
+- Plaintext: `Hello`
+- Encrypted: `Khoor`
 
-**Key Features:**
-Case preservation (uppercase stays uppercase, lowercase stays lowercase).
-Non-alphabetic characters pass through unchanged.
-Empty message got retry pop-up.
-Robust input validation with retry logic.
-Clean, modular code structure.
+## Implementation Details
 
-## Authors
-hoangphuocvu
-Chanrow Petch
--
+### Allowed Packages
+- `bufio` - For reading user input.
+- `fmt` - For formatted I/O.
+- `os` - For operating system functionality.
+- `strconv` - For converting strings.
+- `strings` - For string manipulation.
+
+### Key Features
+- Case preservation (uppercase stays uppercase, lowercase stays lowercase).
+- Non-alphabetic characters pass through unchanged.
+- Empty message got retry pop-up.
+- Robust input validation with retry logic.
+- Clean, modular code structure.
+
+  ## Authors
+  Chanrow Petch
+  Huong Phuc
+  -

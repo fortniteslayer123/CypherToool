@@ -1,4 +1,4 @@
-# CyperhTool
+# CypherTool
 
 A command-line tool for encrypting and decrypting messages using classical cypher techniques.
 
@@ -64,14 +64,14 @@ Encrypted: Khoor
 
 Implementation Details
 
-Allowed Packages
+#Allowed Packages
 bufio - For reading user input.
 fmt - For formatted I/O.
 os - For operating system functionality.
 strconv - For converting strings.
 strings - For string manipulation.
 
-Key Features
+#Key Features
 Case preservation (uppercase stays uppercase, lowercase stays lowercase).
 Non-alphabetic characters pass through unchanged.
 Empty message got retry pop-up.
